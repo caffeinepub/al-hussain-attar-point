@@ -2,6 +2,7 @@ import {
   ChevronDown,
   Clock,
   Droplets,
+  Instagram,
   Leaf,
   MapPin,
   MessageCircle,
@@ -11,6 +12,7 @@ import {
 import { motion } from "motion/react";
 
 const WA_BASE = "https://wa.me/916398948080";
+const INSTA_URL = "https://www.instagram.com/Al_hussain072";
 
 const products = [
   {
@@ -121,6 +123,16 @@ function Navbar() {
             </a>
           ))}
           <a
+            href={INSTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold/80 hover:text-light-gold transition-colors duration-200"
+            aria-label="Instagram"
+            data-ocid="nav.instagram.link"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a
             href={WA_BASE}
             target="_blank"
             rel="noopener noreferrer"
@@ -131,16 +143,27 @@ function Navbar() {
             Order Now
           </a>
         </nav>
-        {/* Mobile WhatsApp button */}
-        <a
-          href={WA_BASE}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="md:hidden bg-whatsapp text-white p-2 rounded-full"
-          data-ocid="nav.whatsapp.button"
-        >
-          <MessageCircle className="w-5 h-5" />
-        </a>
+        {/* Mobile icons */}
+        <div className="md:hidden flex items-center gap-3">
+          <a
+            href={INSTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold/80"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a
+            href={WA_BASE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-whatsapp text-white p-2 rounded-full"
+            data-ocid="nav.whatsapp.button"
+          >
+            <MessageCircle className="w-5 h-5" />
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -610,6 +633,22 @@ function ContactSection() {
               <MessageCircle className="w-6 h-6" />
               Order via WhatsApp: +91 63989 48080
             </a>
+            <a
+              href={INSTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body font-bold px-8 py-4 rounded-full flex items-center gap-3 hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-xl text-lg border-2"
+              style={{
+                background:
+                  "linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)",
+                color: "white",
+                borderColor: "transparent",
+              }}
+              data-ocid="contact.instagram.button"
+            >
+              <Instagram className="w-6 h-6" />
+              Follow on Instagram
+            </a>
           </div>
 
           <div
@@ -629,6 +668,20 @@ function ContactSection() {
                 style={{ color: "oklch(0.72 0.12 80)" }}
               />
               <span>India — Kashmir · Kannauj · Local</span>
+            </div>
+            <div className="flex items-center gap-2 justify-center">
+              <Instagram
+                className="w-4 h-4"
+                style={{ color: "oklch(0.72 0.12 80)" }}
+              />
+              <a
+                href={INSTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                @Al_hussain072
+              </a>
             </div>
           </div>
         </motion.div>
@@ -663,6 +716,19 @@ function Footer() {
               Pure Attars & Ittars since generations
             </p>
           </div>
+
+          {/* Instagram link in footer */}
+          <a
+            href={INSTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            style={{ color: "oklch(0.72 0.12 80)" }}
+            data-ocid="footer.instagram.link"
+          >
+            <Instagram className="w-4 h-4" />
+            <span className="font-body text-sm">@Al_hussain072</span>
+          </a>
 
           <div
             className="font-body text-xs text-center"
