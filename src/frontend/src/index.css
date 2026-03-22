@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep luxury green-gold palette */
+    --background: 88 15% 96%; /* cream #fdf8f0 */
+    --foreground: 150 40% 10%; /* very dark green */
+    --card: 0 0% 100%;
+    --card-foreground: 150 40% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 40% 10%;
+    --primary: 143 48% 20%; /* deep green #1a4d2e */
+    --primary-foreground: 45 90% 60%; /* gold */
+    --secondary: 143 40% 30%; /* medium green */
+    --secondary-foreground: 45 90% 92%;
+    --muted: 143 15% 88%;
+    --muted-foreground: 143 20% 40%;
+    --accent: 43 55% 55%; /* gold #c9a84c */
+    --accent-foreground: 143 48% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 43 30% 75%;
+    --input: 43 30% 88%;
+    --ring: 43 55% 55%;
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --deep-green: oklch(0.27 0.08 148);
+    --medium-green: oklch(0.38 0.09 148);
+    --gold: oklch(0.72 0.12 80);
+    --light-gold: oklch(0.82 0.15 85);
+    --cream: oklch(0.98 0.01 90);
+    --dark-bg: oklch(0.18 0.07 148);
+    --whatsapp-green: oklch(0.72 0.17 145);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Lato", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+  .font-body {
+    font-family: "Lato", sans-serif;
+  }
+  .text-gold {
+    color: oklch(0.72 0.12 80);
+  }
+  .text-light-gold {
+    color: oklch(0.82 0.15 85);
+  }
+  .bg-deep-green {
+    background-color: oklch(0.27 0.08 148);
+  }
+  .bg-dark-bg {
+    background-color: oklch(0.18 0.07 148);
+  }
+  .bg-medium-green {
+    background-color: oklch(0.38 0.09 148);
+  }
+  .bg-cream {
+    background-color: oklch(0.98 0.01 90);
+  }
+  .bg-whatsapp {
+    background-color: oklch(0.72 0.17 145);
+  }
+  .border-gold {
+    border-color: oklch(0.72 0.12 80);
+  }
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.12 80),
+      oklch(0.82 0.15 85),
+      oklch(0.72 0.12 80)
+    );
+  }
+  .green-gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.07 148),
+      oklch(0.27 0.08 148)
+    );
+  }
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(0.72 0.12 80),
+      transparent
+    );
+  }
+}
